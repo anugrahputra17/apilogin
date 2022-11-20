@@ -1,0 +1,22 @@
+GET http://localhost:5000/users
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJwdXRyYSIsImVtYWlsIjoicHV0cmFAZ21haWwuY29tIiwiaWF0IjoxNjY4OTQ1NjY4LCJleHAiOjE2Njg5NDU2ODh9.Akz-QwEwnFRmfE0bC09sV-dlPn5j8s3ZD_OkyVUYwUI
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "putra",
+    "email": "putra@gmail.com",
+    "password": "admin",
+    "confPassword": "admin"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "putra@gmail.com",
+    "password": "admin"
+}
