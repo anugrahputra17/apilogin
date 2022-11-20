@@ -10,6 +10,6 @@ router.post('/users', Register);
 router.post('/login', Login);
 router.get('/token', refreshToken);
 router.delete('/logout', Logout);
-router.get('/coba', deploy);
+router.get('/', deploy);
 
 export default router;
