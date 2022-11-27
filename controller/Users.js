@@ -4,23 +4,25 @@ import jwt from "jsonwebtoken";
 
 export const getUsers = async(req,res) => {
     try{
-        const users  = await Users.findAll({
+        const user  = await Users.findAll({
             attributes:['id','name','email']
         });
-        res.json(users);
+        res.json(user);
     } catch(error){
         console.log(error);
     }
 }
 
 export const Register = async(req,res) => {
-    const {name, email, password, confPassword} = req.body;
+    const {name, birthDate, phone, email, password, confPassword} = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "password tidak cocok"});
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
     try{
         await Users.create({
             name: name,
+            birthDate: birthDate,
+            phone: phone,
             email: email,
             password: hashPassword
         });
@@ -57,7 +59,7 @@ export const Login = async(req,res) =>{
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         });
-        res.json({ accesToken,name })
+        res.json({ accesToken,name,email })
     }catch(error){
         res.status(404).json({msg: error}); 
     }

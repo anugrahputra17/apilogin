@@ -3,9 +3,15 @@ import db from "../config/database.js";
 
 const { DataTypes } = sequelize;
 
-const Users = db.define('users',{
+const Users = db.define('user',{
     name:{
         type: DataTypes.STRING
+    },
+    birthDate:{
+        type: DataTypes.DATE
+    },
+    phone:{
+        type: DataTypes.INTEGER
     },
     email:{
         type: DataTypes.STRING
@@ -21,3 +27,7 @@ const Users = db.define('users',{
 });
 
 export default Users;
+
+(async()=>{
+    await db.sync();
+})();
