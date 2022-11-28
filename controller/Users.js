@@ -14,15 +14,13 @@ export const getUsers = async(req,res) => {
 }
 
 export const Register = async(req,res) => {
-    const {name, birthDate, phone, email, password, confPassword} = req.body;
+    const {name, email, password, confPassword} = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "password tidak cocok"});
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
     try{
         await Users.create({
             name: name,
-            birthDate: birthDate,
-            phone: phone,
             email: email,
             password: hashPassword
         });
