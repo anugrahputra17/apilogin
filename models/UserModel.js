@@ -11,7 +11,7 @@ const Users = db.define('userss',{
         type: DataTypes.DATE
     },
     phone:{
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     },
     email:{
         type: DataTypes.STRING
