@@ -2,16 +2,16 @@ GET http://localhost:5000/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJwdXRyYSIsImVtYWlsIjoicHV0cmFAZ21haWwuY29tIiwiaWF0IjoxNjY4OTQ5ODMwLCJleHAiOjE2Njg5NDk4NDV9.BJJviYMnBcMBhpY14H6rfdDv5nCWo2BlZ5fO4X3bBkI
 
 ###
-POST http://localhost:5000/users
+POST http://localhost:5000/userss
 Content-Type: application/json
 
 {
-    "name": "putrazzzz",
-    "birthDate": "2000-02-02",
-    "phone": "01293923213",
-    "email": "putraz@gmail.com",
-    "password": "admin",
-    "confPassword": "admin"
+    "name": "andi",
+    "birthDate": "2003-10-02",
+    "phone": "8123456789",
+    "email": "andi@gmail.com",
+    "password": "123456",
+    "confPassword": "123456"
 }
 
 ###
